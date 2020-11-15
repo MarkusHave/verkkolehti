@@ -1,2 +1,3 @@
-# verkkolehti
-Web ja web-palvelin ohjelmointi harkkatyö
+# Verkkolehti
+
+Verkkolehti web-ohjelmointi ja web-palvelinohjelmointikursseille. 

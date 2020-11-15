@@ -1,0 +1,45 @@
+image: marshallford/podman:latest
+stages:
+  - start
+  - purge
+  - deploy
+
+start:
+  stage: start
+  only:
+    - master
+  when: manual
+  script:
+    - echo "Starting build $CI_BUILD_ID"
+  allow_failure: false
+  tags:
+    - gcloud
+
+purge:
+  stage: purge
+  only: 
+    - master
+  script:
+    - podman rmi --all -f
+    - podman rm --all -f
+  allow_failure: true
+  dependencies:
+    - start
+  tags: 
+    - gcloud
+
+
+deploy:
+  stage: deploy
+  environment: Production
+  only:
+    - master
+  script:
+    - podman build -t nodeapp .
+    - podman run -dt --network=host --name nodeapp nodeapp
+  retry: 1
+  dependencies:
+    - start
+    - purge
+  tags: 
+    - gcloud

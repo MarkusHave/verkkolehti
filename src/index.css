@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    background-color: #282c34;
+
+}
+
+
+#App {
+  background-color: #1C1C1C;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(5px + 2vmin);
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+
+/* Styles for components down here */
+
+/* ArticleFP styles */
+.fpArticle{
+  background-color: grey;
+  border: black 1px solid;
+  width: 60vw;
+  margin: 0.2em;
+}
+.fpText{
+  color:black;
+  padding: 0.3em;
+}
+
+
+/* Article page styles */
+/* Container for article */
+.articleWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em;
+  background-color: gray;
+  width: 55vmax;
+}
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 1000px) {
+  .fpArticle {
+    width: 90vw; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+  .articleWrapper{
+    width: 90vw;
+  }
+}
+
+.article{
+  padding: 0em 1em 0em 1em;
+}
+
+.articleHeader, .author, .articleText, .created, .category{
+  color: black;
+}
+
+.author, .category, .created{
+  font-size: 0.8em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.loading{
+  color: black;
+}
+
+.delButton{
+  background-color: red;
+  font-size: 0.7em;
+}
+
+/* Navbar styles */
+
+.navbarLinks, .navbarLinks:visited{
+  color: lightblue;
+}
+
+.linksDiv{
+  text-align: center;
+}
+
+#navbar{ 
+  /*background-color: black;*/
+}
+
+/* Login component */
+
+.error{
+  color: red;
+  font-size: 0.8em;
+}
+
+/* Account */
+.account{
+  display: flex;
+  align-items: center;
+}
+
+.emailForm, .passwdForm{
+margin: 1em;
+}
+
+/* Search bar styles */
+
+.searchContainer {
+  max-width: 23vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.7em;
+}
+
+.searchResult:hover {
+  background-color:gray;
+}
+
+
+.searchLink:hover {
+  color: white;
+}
+
+.searchLink {
+  font-size: 0.8em;
+  color: white;
+  text-decoration: underline;
+}
+
+.searchText{
+  color: #ffffff;
+  font-size: 1em;
+}
